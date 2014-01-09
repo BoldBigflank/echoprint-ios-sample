@@ -15,5 +15,6 @@ Requires the BOOST C++ libraries.
 
 Unfortunately the available instructions are all for pre-XCODE 5. I had to update the compiler under build settings to avoid some errors about llvm43 not being available.
 
+I ultimately got frustrated fighting with Boost linker errors and looked elesewhere for my audio finger printing needs. Try this article: http://bleepsandpops.com/post/7453509622/using-the-echoprint-audio-fingerprinter-on-os-x-or-ios.
 
 
