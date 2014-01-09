@@ -28,16 +28,16 @@
 	[audioSession setCategory:AVAudioSessionCategoryRecord error:nil];
 	
 	NSMutableDictionary *recordSettings = [[NSMutableDictionary alloc] initWithCapacity:10];
-	[recordSettings setObject:[NSNumber numberWithInt: kAudioFormatLinearPCM] forKey: AVFormatIDKey];
-	[recordSettings setObject:[NSNumber numberWithFloat:44100.0] forKey: AVSampleRateKey];
-	[recordSettings setObject:[NSNumber numberWithInt:2] forKey:AVNumberOfChannelsKey];
-	[recordSettings setObject:[NSNumber numberWithInt:16] forKey:AVLinearPCMBitDepthKey];
-	[recordSettings setObject:[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsBigEndianKey];
-	[recordSettings setObject:[NSNumber numberWithBool:NO] forKey:AVLinearPCMIsFloatKey];   
+	recordSettings[AVFormatIDKey] = @(kAudioFormatLinearPCM);
+	recordSettings[AVSampleRateKey] = @44100.0f;
+	recordSettings[AVNumberOfChannelsKey] = @2;
+	recordSettings[AVLinearPCMBitDepthKey] = @16;
+	recordSettings[AVLinearPCMIsBigEndianKey] = @NO;
+	recordSettings[AVLinearPCMIsFloatKey] = @NO;   
 	
 	//set the export session's outputURL to <Documents>/output.caf
 	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString *documentsDirectory = [paths objectAtIndex:0];
+	NSString *documentsDirectory = paths[0];
 	NSURL* outURL = [NSURL fileURLWithPath:[documentsDirectory stringByAppendingPathComponent:@"output.caf"]];
 	[[NSFileManager defaultManager] removeItemAtURL:outURL error:nil];
 	NSLog(@"url loc is %@", outURL);

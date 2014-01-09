@@ -7,9 +7,9 @@
 //
 
 #import "echoprintViewController.h"
+#import "ASIHTTPRequest.h"
+
 extern const char * GetPCMFromFile(char * filename);
-
-
 
 @implementation echoprintViewController
 
@@ -17,7 +17,7 @@ extern const char * GetPCMFromFile(char * filename);
 	NSLog(@"Pick song");
 	MPMediaPickerController* mediaPicker = [[[MPMediaPickerController alloc] initWithMediaTypes:MPMediaTypeMusic] autorelease];
 	mediaPicker.delegate = self;
-	[self presentModalViewController:mediaPicker animated:YES];
+	[self presentViewController:mediaPicker animated:YES completion:nil];
 	
 }
 - (IBAction) startMicrophone:(id)sender {
@@ -26,7 +26,7 @@ extern const char * GetPCMFromFile(char * filename);
 		[recorder stopRecording];
 		[recordButton setTitle:@"Record" forState:UIControlStateNormal];
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-		NSString *documentsDirectory = [paths objectAtIndex:0];
+		NSString *documentsDirectory = paths[0];
 		NSString *filePath =[documentsDirectory stringByAppendingPathComponent:@"output.caf"];
 		[statusLine setText:@"analysing..."];
 		[statusLine setNeedsDisplay];
@@ -48,13 +48,13 @@ extern const char * GetPCMFromFile(char * filename);
 
 - (void)mediaPicker:(MPMediaPickerController *)mediaPicker 
   didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection {
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 	for (MPMediaItem* item in mediaItemCollection.items) {
 		NSString* title = [item valueForProperty:MPMediaItemPropertyTitle];
 		NSURL* assetURL = [item valueForProperty:MPMediaItemPropertyAssetURL];
 		NSLog(@"title: %@, url: %@", title, assetURL);
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-		NSString *documentsDirectory = [paths objectAtIndex:0];
+		NSString *documentsDirectory = paths[0];
 
 		NSURL* destinationURL = [NSURL fileURLWithPath:[documentsDirectory stringByAppendingPathComponent:@"temp_data"]];
 		[[NSFileManager defaultManager] removeItemAtURL:destinationURL error:nil];
@@ -86,10 +86,10 @@ extern const char * GetPCMFromFile(char * filename);
 		NSString *response = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];		
 		NSDictionary *dictionary = [response JSONValue];
 		NSLog(@"%@", dictionary);
-		NSArray *songList = [[dictionary objectForKey:@"response"] objectForKey:@"songs"];
+		NSArray *songList = dictionary[@"response"][@"songs"];
 		if([songList count]>0) {
-			NSString * song_title = [[songList objectAtIndex:0] objectForKey:@"title"];
-			NSString * artist_name = [[songList objectAtIndex:0] objectForKey:@"artist_name"];
+			NSString * song_title = songList[0][@"title"];
+			NSString * artist_name = songList[0][@"artist_name"];
 			[statusLine setText:[NSString stringWithFormat:@"%@ - %@", artist_name, song_title]];
 		} else {
 			[statusLine setText:@"no match"];
@@ -105,25 +105,8 @@ extern const char * GetPCMFromFile(char * filename);
 
 
 - (void)mediaPickerDidCancel:(MPMediaPickerController *)mediaPicker {
-	[self dismissModalViewControllerAnimated:YES];
+	[self dismissViewControllerAnimated:YES completion:nil];
 }
-
-/*
-// The designated initializer. Override to perform setup that is required before the view is loaded.
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
-*/
-
-/*
-// Implement loadView to create a view hierarchy programmatically, without using a nib.
-- (void)loadView {
-}
-*/
 
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
@@ -132,15 +115,6 @@ extern const char * GetPCMFromFile(char * filename);
 	recorder = [[MicrophoneInput alloc] init];
 	recording = NO;
 }
-
-
-/*
-// Override to allow orientations other than the default portrait orientation.
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-    // Return YES for supported orientations
-    return (interfaceOrientation == UIInterfaceOrientationPortrait);
-}
-*/
 
 - (void)didReceiveMemoryWarning {
 	// Releases the view if it doesn't have a superview.

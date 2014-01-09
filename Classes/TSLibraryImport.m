@@ -78,7 +78,7 @@
 				OSStatus code = noErr;
 				if ([e.name compare:TSUnknownError]) code = kTSUnknownError;
 				else if ([e.name compare:TSFileExistsError]) code = kTSFileExistsError;
-				NSDictionary* errorDict = [NSDictionary dictionaryWithObject:e.reason forKey:NSLocalizedDescriptionKey];
+				NSDictionary* errorDict = @{NSLocalizedDescriptionKey: e.reason};
 				
 				movieFileErr = [[NSError alloc] initWithDomain:TSLibraryImportErrorDomain code:code userInfo:errorDict];
 			}
