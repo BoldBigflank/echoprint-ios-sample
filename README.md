@@ -7,6 +7,8 @@ This is an upgraded version of the Echoprint Sample iOS Project
 
 The project requires a depdendency on libechoprint-codegen-ios.a
 
+Run pod install to setup the pod files.
+
 Follow this to compile libechoprint-codegen-ios.a for yourself: http://stackoverflow.com/questions/12135898/echoprint-ios-missing-framework.
 
 Requires the BOOST C++ libraries. 
