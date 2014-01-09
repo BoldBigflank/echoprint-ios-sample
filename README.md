@@ -1,6 +1,17 @@
-# echoprint-ios-sample
+This is an upgraded version of the Echoprint Sample iOS Project
 
-Very brief sample of how to use echoprint in an iOS app. This will choose a file from your library, compute the code with Echoprint and send it to the Echo Nest API for matching.
+- Modernized Objective-C
+- Modernized UIKit and other legacy project files
+- Updated ASIHTTP to more current version
+- Added Cocoapods
 
-You will need to have compiled libechoprint-codegen-ios.a, which you can compile using the Xcode project in echoprint-codegen.
+The project requires a depdendency on libechoprint-codegen-ios.a
+
+Follow this to compile libechoprint-codegen-ios.a for yourself: http://stackoverflow.com/questions/12135898/echoprint-ios-missing-framework.
+
+Requires the BOOST C++ libraries. 
+
+Unfortunately the available instructions are all for pre-XCODE 5. I had to update the compiler under build settings to avoid some errors about llvm43 not being available.
+
+
 
