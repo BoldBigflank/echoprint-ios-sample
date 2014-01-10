@@ -16,7 +16,8 @@
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* echoprintViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* echoprintViewController.m */; };
 		4BBDAA957F5445D8AFD0EECE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C781E7464C49138C09E899 /* libPods.a */; };
-		9AAF51B213B2559100099790 /* libechoprint-codegen-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AAF51B113B2559100099790 /* libechoprint-codegen-ios.a */; };
+		51F573E9187F9B4E00B85689 /* libechoprint-codegen-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F573E6187F9B2F00B85689 /* libechoprint-codegen-ios.a */; };
+		51F573EB187F9B5300B85689 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F573EA187F9B5300B85689 /* libstdc++.6.0.9.dylib */; };
 		9AC8897113A69822002C92D4 /* Codegen_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8896E13A69821002C92D4 /* Codegen_wrapper.cpp */; };
 		9AC8897213A69822002C92D4 /* GetPCMFromFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8897013A69822002C92D4 /* GetPCMFromFile.cpp */; };
 		9AC8897513A69840002C92D4 /* MicrophoneInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8897413A69840002C92D4 /* MicrophoneInput.m */; };
@@ -29,6 +30,23 @@
 		9AC88A7C13A6AD2F002C92D4 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC88A7B13A6AD2F002C92D4 /* MobileCoreServices.framework */; };
 		9AC88A8313A6AD3A002C92D4 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC88A8213A6AD3A002C92D4 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		51F573E5187F9B2F00B85689 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51F573E1187F9B2F00B85689 /* echoprint-codegen-ios.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C8D4AD1C137EE85F00CD506D;
+			remoteInfo = "echoprint-codegen-ios";
+		};
+		51F573E7187F9B4A00B85689 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 51F573E1187F9B2F00B85689 /* echoprint-codegen-ios.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = C8D4AD1B137EE85F00CD506D;
+			remoteInfo = "echoprint-codegen-ios";
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		12C4245D36A74350A5EFE6CB /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
@@ -44,9 +62,10 @@
 		28D7ACF70DDB3853001CB0EB /* echoprintViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = echoprintViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* echoprint_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = echoprint_Prefix.pch; sourceTree = "<group>"; };
+		51F573E1187F9B2F00B85689 /* echoprint-codegen-ios.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "echoprint-codegen-ios.xcodeproj"; path = "echoprint-codegen-master/src/echoprint-codegen-ios/echoprint-codegen-ios.xcodeproj"; sourceTree = "<group>"; };
+		51F573EA187F9B5300B85689 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
 		84C781E7464C49138C09E899 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1107310486CEB800E47090 /* echoprint-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "echoprint-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		9AAF51B113B2559100099790 /* libechoprint-codegen-ios.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = "libechoprint-codegen-ios.a"; path = "../../echoprint-codegen/src/echoprint-codegen-ios/build/Release-iphoneos/libechoprint-codegen-ios.a"; sourceTree = SOURCE_ROOT; };
 		9AC8896C13A69821002C92D4 /* Codegen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Codegen.h; path = "Echoprint Headers/Codegen.h"; sourceTree = "<group>"; };
 		9AC8896D13A69821002C92D4 /* Codegen_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Codegen_wrapper.h; path = "Echoprint Headers/Codegen_wrapper.h"; sourceTree = "<group>"; };
 		9AC8896E13A69821002C92D4 /* Codegen_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Codegen_wrapper.cpp; path = "Echoprint Headers/Codegen_wrapper.cpp"; sourceTree = "<group>"; };
@@ -72,6 +91,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				51F573EB187F9B5300B85689 /* libstdc++.6.0.9.dylib in Frameworks */,
+				51F573E9187F9B4E00B85689 /* libechoprint-codegen-ios.a in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -82,7 +103,6 @@
 				9AC88A7313A6AD1A002C92D4 /* CFNetwork.framework in Frameworks */,
 				9AC88A7C13A6AD2F002C92D4 /* MobileCoreServices.framework in Frameworks */,
 				9AC88A8313A6AD3A002C92D4 /* SystemConfiguration.framework in Frameworks */,
-				9AAF51B213B2559100099790 /* libechoprint-codegen-ios.a in Frameworks */,
 				4BBDAA957F5445D8AFD0EECE /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +136,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				51F573E1187F9B2F00B85689 /* echoprint-codegen-ios.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
@@ -155,7 +176,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9AAF51B113B2559100099790 /* libechoprint-codegen-ios.a */,
+				51F573EA187F9B5300B85689 /* libstdc++.6.0.9.dylib */,
 				9AC88A6E13A6ACEA002C92D4 /* libz.dylib */,
 				9AC88A0013A6A4B4002C92D4 /* MediaPlayer.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
@@ -169,6 +190,14 @@
 				84C781E7464C49138C09E899 /* libPods.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		51F573E2187F9B2F00B85689 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				51F573E6187F9B2F00B85689 /* libechoprint-codegen-ios.a */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +216,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				51F573E8187F9B4A00B85689 /* PBXTargetDependency */,
 			);
 			name = echoprint;
 			productName = echoprint;
@@ -213,12 +243,28 @@
 			);
 			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 51F573E2187F9B2F00B85689 /* Products */;
+					ProjectRef = 51F573E1187F9B2F00B85689 /* echoprint-codegen-ios.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				1D6058900D05DD3D006BFB54 /* echoprint */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		51F573E6187F9B2F00B85689 /* libechoprint-codegen-ios.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libechoprint-codegen-ios.a";
+			remoteRef = 51F573E5187F9B2F00B85689 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		1D60588D0D05DD3D006BFB54 /* Resources */ = {
@@ -281,6 +327,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		51F573E8187F9B4A00B85689 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "echoprint-codegen-ios";
+			targetProxy = 51F573E7187F9B4A00B85689 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {

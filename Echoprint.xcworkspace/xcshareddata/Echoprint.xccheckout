@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>4E2AD32F-EA3D-4FE8-9D1E-C6004EC97C22</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Echoprint</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>3EC28481-C136-4A9A-BB1F-DB31F1E9A29B</key>
+		<string>ssh://github.com/rexstjohn/echoprint-ios-sample.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Echoprint.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>3EC28481-C136-4A9A-BB1F-DB31F1E9A29B</key>
+		<string>..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/rexstjohn/echoprint-ios-sample.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>3EC28481-C136-4A9A-BB1F-DB31F1E9A29B</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>3EC28481-C136-4A9A-BB1F-DB31F1E9A29B</string>
+			<key>IDESourceControlWCCName</key>
+			<string>echoprint-ios-sample</string>
+		</dict>
+	</array>
+</dict>
+</plist>
