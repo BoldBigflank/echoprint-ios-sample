@@ -1,3 +1,12 @@
+***** UPDATE *****
+
+(March 4th, 2014)
+
+People have been having difficulty getting this working. There is a thread on Google Groups: https://groups.google.com/forum/#!topic/echoprint/Zi_ip49Xgds.
+
+I *believe* the issue is related to the fact that the prior project was built for an older XCode + Compiler (GCC). In order to "upgrade" the project I had to bump up to LLVM which is now the default and this results in some issues with the C++ portions of the project. I am currently out of time to work on this, if you have a solution I welcome your pull requests. 
+
+
 OVERVIEW
 
 This is an upgraded version of the Echoprint Sample iOS Project.
