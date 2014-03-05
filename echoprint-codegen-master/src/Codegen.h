@@ -13,6 +13,8 @@
 #include <string>
 #include <vector>
 
+#include <Foundation/Foundation.h>
+
 #ifdef _MSC_VER
     #ifdef CODEGEN_EXPORTS
         #define CODEGEN_API __declspec(dllexport)
@@ -36,6 +38,8 @@ public:
     std::string getCodeString(){return _CodeString;}
     int getNumCodes(){return _NumCodes;}
     static double getVersion() { return ECHOPRINT_VERSION; }
+    
+    static NSString* encode(const float* pcm, unsigned int numSamples, int start_offset);
 private:
     Fingerprint* computeFingerprint(SubbandAnalysis *pSubbandAnalysis, int start_offset);
     std::string createCodeString(std::vector<FPCode> vCodes);

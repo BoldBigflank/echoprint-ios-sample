@@ -9,8 +9,6 @@
 #import "echoprintViewController.h"
 #import "ASIHTTPRequest.h"
 
-extern const char * GetPCMFromFile(char * filename);
-
 @implementation echoprintViewController
 
 - (IBAction)pickSong:(id)sender {
@@ -31,7 +29,7 @@ extern const char * GetPCMFromFile(char * filename);
 		[statusLine setText:@"analysing..."];
 		[statusLine setNeedsDisplay];
 		[self.view setNeedsDisplay];
-		const char * fpCode = GetPCMFromFile((char*) [filePath cStringUsingEncoding:NSASCIIStringEncoding]);
+        NSString* fpCode = [FPGenerator generateFingerprintForFile:filePath];
         [self getSong:fpCode];
 	} else {
 		[statusLine setText:@"recording..."];
@@ -65,7 +63,9 @@ extern const char * GetPCMFromFile(char * filename);
 			NSString *outPath = [documentsDirectory stringByAppendingPathComponent:@"temp_data"];
 			NSLog(@"done now. %@", outPath);
 			[statusLine setText:@"analysing..."];
-			const char * fpCode = GetPCMFromFile((char*) [outPath  cStringUsingEncoding:NSASCIIStringEncoding]);
+			
+            NSString* fpCode = [FPGenerator generateFingerprintForFile:outPath];
+            
 			[statusLine setNeedsDisplay];
 			[self.view setNeedsDisplay];
 			[self getSong:fpCode];
@@ -75,16 +75,20 @@ extern const char * GetPCMFromFile(char * filename);
 }
 
 
-- (void) getSong: (const char*) fpCode {
-	NSLog(@"Done %s", fpCode);
-	NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://%@/api/v4/song/identify?api_key=%@&version=4.11&code=%s", API_HOST, API_KEY, fpCode]];
-	ASIHTTPRequest * request = [ASIHTTPRequest requestWithURL:url];
+- (void) getSong: (NSString*) fpCode {
+	NSLog(@"Done %@", fpCode);
+
+    NSString *apiString = [NSString stringWithFormat:@"http://%@/api/v4/song/identify?api_key=%@&version=4.11&code=%@&format=json", API_HOST, API_KEY, fpCode];
+    
+    NSURL *url = [NSURL URLWithString:apiString];
+	
+    ASIHTTPRequest * request = [ASIHTTPRequest requestWithURL:url];
 	[request setAllowCompressedResponse:NO];
 	[request startSynchronous];
 	NSError *error = [request error];
 	if (!error) {
-		NSString *response = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];		
-		NSDictionary *dictionary = [response JSONValue];
+		NSString *response = [[NSString alloc] initWithData:[request responseData] encoding:NSUTF8StringEncoding];
+        NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:[response dataUsingEncoding:NSUTF8StringEncoding] options:0 error:nil];
 		NSLog(@"%@", dictionary);
 		NSArray *songList = dictionary[@"response"][@"songs"];
 		if([songList count]>0) {
