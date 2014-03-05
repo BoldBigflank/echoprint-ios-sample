@@ -17,12 +17,11 @@
 {
     @private
     Codegen *codegen;
+    
     NSString *fingerprint;
 }
 
 - (id) initWithPCM:(float*)pcmFloatValue numberOfSamples:(NSUInteger)numSamples startOffset:(NSInteger)startOffset;
 
 - (NSString*) codeString;
-- (NSInteger) numCodes;
-- (float) version;
 @end
