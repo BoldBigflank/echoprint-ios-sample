@@ -13,6 +13,9 @@
 #import "TSLibraryImport.h"
 #import "MicrophoneInput.h"
 
+#import "FPGenerator.h"
+
+
 // developer.echonest.com
 #define API_KEY @"GET_YOUR_OWN"
 #define API_HOST @"developer.echonest.com"
@@ -27,7 +30,7 @@
 
 - (IBAction)pickSong:(id)sender;
 - (IBAction)startMicrophone:(id)sender;
-- (void) getSong: (const char*) fpCode;
+- (void) getSong: (NSString*) fpCode;
 
 @end
 

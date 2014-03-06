@@ -47,6 +47,15 @@ Codegen::Codegen(const float* pcm, unsigned int numSamples, int start_offset) {
     delete pAudio;
 }
 
+NSString* Codegen::encode(const float* pcm, unsigned int numSamples, int start_offset)
+{
+    Codegen *codegen = new Codegen(pcm, numSamples, start_offset);
+    
+    NSString *fingerprint = [NSString stringWithUTF8String:codegen->getCodeString().c_str()];
+    
+    return fingerprint;
+}
+
 string Codegen::createCodeString(vector<FPCode> vCodes) {
     if (vCodes.size() < 3) {
         return "";

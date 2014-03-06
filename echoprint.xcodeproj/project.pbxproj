@@ -18,8 +18,8 @@
 		4BBDAA957F5445D8AFD0EECE /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84C781E7464C49138C09E899 /* libPods.a */; };
 		51F573E9187F9B4E00B85689 /* libechoprint-codegen-ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F573E6187F9B2F00B85689 /* libechoprint-codegen-ios.a */; };
 		51F573EB187F9B5300B85689 /* libstdc++.6.0.9.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 51F573EA187F9B5300B85689 /* libstdc++.6.0.9.dylib */; };
-		9AC8897113A69822002C92D4 /* Codegen_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8896E13A69821002C92D4 /* Codegen_wrapper.cpp */; };
-		9AC8897213A69822002C92D4 /* GetPCMFromFile.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8897013A69822002C92D4 /* GetPCMFromFile.cpp */; };
+		547F808E18C76966000FEDB7 /* CodeGenWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 547F808B18C76966000FEDB7 /* CodeGenWrapper.mm */; };
+		547F808F18C76966000FEDB7 /* FPGenerator.m in Sources */ = {isa = PBXBuildFile; fileRef = 547F808D18C76966000FEDB7 /* FPGenerator.m */; };
 		9AC8897513A69840002C92D4 /* MicrophoneInput.m in Sources */ = {isa = PBXBuildFile; fileRef = 9AC8897413A69840002C92D4 /* MicrophoneInput.m */; };
 		9AC8898A13A69876002C92D4 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC8898913A69876002C92D4 /* AVFoundation.framework */; };
 		9AC8899113A69880002C92D4 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC8899013A69880002C92D4 /* AudioToolbox.framework */; };
@@ -64,13 +64,13 @@
 		32CA4F630368D1EE00C91783 /* echoprint_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = echoprint_Prefix.pch; sourceTree = "<group>"; };
 		51F573E1187F9B2F00B85689 /* echoprint-codegen-ios.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "echoprint-codegen-ios.xcodeproj"; path = "echoprint-codegen-master/src/echoprint-codegen-ios/echoprint-codegen-ios.xcodeproj"; sourceTree = "<group>"; };
 		51F573EA187F9B5300B85689 /* libstdc++.6.0.9.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libstdc++.6.0.9.dylib"; path = "usr/lib/libstdc++.6.0.9.dylib"; sourceTree = SDKROOT; };
+		547F808A18C76966000FEDB7 /* CodeGenWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CodeGenWrapper.h; sourceTree = "<group>"; };
+		547F808B18C76966000FEDB7 /* CodeGenWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = CodeGenWrapper.mm; sourceTree = "<group>"; };
+		547F808C18C76966000FEDB7 /* FPGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPGenerator.h; sourceTree = "<group>"; };
+		547F808D18C76966000FEDB7 /* FPGenerator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPGenerator.m; sourceTree = "<group>"; };
 		84C781E7464C49138C09E899 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1107310486CEB800E47090 /* echoprint-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "echoprint-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		9AC8896C13A69821002C92D4 /* Codegen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Codegen.h; path = "Echoprint Headers/Codegen.h"; sourceTree = "<group>"; };
-		9AC8896D13A69821002C92D4 /* Codegen_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Codegen_wrapper.h; path = "Echoprint Headers/Codegen_wrapper.h"; sourceTree = "<group>"; };
-		9AC8896E13A69821002C92D4 /* Codegen_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Codegen_wrapper.cpp; path = "Echoprint Headers/Codegen_wrapper.cpp"; sourceTree = "<group>"; };
-		9AC8896F13A69822002C92D4 /* GetPCMFromFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GetPCMFromFile.h; path = "Echoprint Headers/GetPCMFromFile.h"; sourceTree = "<group>"; };
-		9AC8897013A69822002C92D4 /* GetPCMFromFile.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GetPCMFromFile.cpp; path = "Echoprint Headers/GetPCMFromFile.cpp"; sourceTree = "<group>"; };
 		9AC8897313A69840002C92D4 /* MicrophoneInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MicrophoneInput.h; sourceTree = "<group>"; };
 		9AC8897413A69840002C92D4 /* MicrophoneInput.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MicrophoneInput.m; sourceTree = "<group>"; };
 		9AC8897E13A6985F002C92D4 /* CAStreamBasicDescription.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CAStreamBasicDescription.h; path = "Echoprint Headers/CAStreamBasicDescription.h"; sourceTree = "<group>"; };
@@ -113,6 +113,10 @@
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				547F808A18C76966000FEDB7 /* CodeGenWrapper.h */,
+				547F808B18C76966000FEDB7 /* CodeGenWrapper.mm */,
+				547F808C18C76966000FEDB7 /* FPGenerator.h */,
+				547F808D18C76966000FEDB7 /* FPGenerator.m */,
 				9AC889D013A69AD6002C92D4 /* TSLibraryImport.m */,
 				9AC889CF13A69AD0002C92D4 /* TSLibraryImport.h */,
 				9AC8897313A69840002C92D4 /* MicrophoneInput.h */,
@@ -153,10 +157,6 @@
 				9AC8897E13A6985F002C92D4 /* CAStreamBasicDescription.h */,
 				9AC8898413A69869002C92D4 /* CADebugMacros.h */,
 				9AC8896C13A69821002C92D4 /* Codegen.h */,
-				9AC8896D13A69821002C92D4 /* Codegen_wrapper.h */,
-				9AC8896E13A69821002C92D4 /* Codegen_wrapper.cpp */,
-				9AC8896F13A69822002C92D4 /* GetPCMFromFile.h */,
-				9AC8897013A69822002C92D4 /* GetPCMFromFile.cpp */,
 				32CA4F630368D1EE00C91783 /* echoprint_Prefix.pch */,
 				29B97316FDCFA39411CA2CEA /* main.m */,
 			);
@@ -231,7 +231,7 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 			};
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Echoprint" */;
+			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "echoprint" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -319,10 +319,10 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* echoprintAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* echoprintViewController.m in Sources */,
-				9AC8897113A69822002C92D4 /* Codegen_wrapper.cpp in Sources */,
-				9AC8897213A69822002C92D4 /* GetPCMFromFile.cpp in Sources */,
 				9AC8897513A69840002C92D4 /* MicrophoneInput.m in Sources */,
 				9AC889D113A69AD6002C92D4 /* TSLibraryImport.m in Sources */,
+				547F808E18C76966000FEDB7 /* CodeGenWrapper.mm in Sources */,
+				547F808F18C76966000FEDB7 /* FPGenerator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +342,8 @@
 			baseConfigurationReference = 12C4245D36A74350A5EFE6CB /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -353,6 +355,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = echoprint;
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -361,6 +364,8 @@
 			baseConfigurationReference = 12C4245D36A74350A5EFE6CB /* Pods.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = echoprint_Prefix.pch;
@@ -370,6 +375,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				PRODUCT_NAME = echoprint;
+				PROVISIONING_PROFILE = "";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -413,7 +419,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "Echoprint" */ = {
+		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "echoprint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,

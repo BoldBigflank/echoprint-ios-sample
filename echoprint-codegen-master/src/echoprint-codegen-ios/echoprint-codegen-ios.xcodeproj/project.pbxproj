@@ -18,7 +18,7 @@
 		C8D4AD52137EF41100CD506D /* AudioStreamInput.h in Headers */ = {isa = PBXBuildFile; fileRef = C8D4AD2C137EF41100CD506D /* AudioStreamInput.h */; };
 		C8D4AD53137EF41100CD506D /* Base64.cxx in Sources */ = {isa = PBXBuildFile; fileRef = C8D4AD2D137EF41100CD506D /* Base64.cxx */; };
 		C8D4AD54137EF41100CD506D /* Base64.h in Headers */ = {isa = PBXBuildFile; fileRef = C8D4AD2E137EF41100CD506D /* Base64.h */; };
-		C8D4AD55137EF41100CD506D /* Codegen.cxx in Sources */ = {isa = PBXBuildFile; fileRef = C8D4AD2F137EF41100CD506D /* Codegen.cxx */; };
+		C8D4AD55137EF41100CD506D /* Codegen.mm in Sources */ = {isa = PBXBuildFile; fileRef = C8D4AD2F137EF41100CD506D /* Codegen.mm */; };
 		C8D4AD56137EF41100CD506D /* Codegen.h in Headers */ = {isa = PBXBuildFile; fileRef = C8D4AD30137EF41100CD506D /* Codegen.h */; };
 		C8D4AD57137EF41100CD506D /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = C8D4AD31137EF41100CD506D /* Common.h */; };
 		C8D4AD60137EF41100CD506D /* File.h in Headers */ = {isa = PBXBuildFile; fileRef = C8D4AD40137EF41100CD506D /* File.h */; };
@@ -45,7 +45,7 @@
 		C8D4AD2C137EF41100CD506D /* AudioStreamInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioStreamInput.h; path = ../../AudioStreamInput.h; sourceTree = "<group>"; };
 		C8D4AD2D137EF41100CD506D /* Base64.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Base64.cxx; path = ../../Base64.cxx; sourceTree = "<group>"; };
 		C8D4AD2E137EF41100CD506D /* Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Base64.h; path = ../../Base64.h; sourceTree = "<group>"; };
-		C8D4AD2F137EF41100CD506D /* Codegen.cxx */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Codegen.cxx; path = ../../Codegen.cxx; sourceTree = "<group>"; };
+		C8D4AD2F137EF41100CD506D /* Codegen.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Codegen.mm; path = ../../Codegen.mm; sourceTree = "<group>"; };
 		C8D4AD30137EF41100CD506D /* Codegen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Codegen.h; path = ../../Codegen.h; sourceTree = "<group>"; };
 		C8D4AD31137EF41100CD506D /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Common.h; path = ../../Common.h; sourceTree = "<group>"; };
 		C8D4AD40137EF41100CD506D /* File.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = File.h; path = ../../File.h; sourceTree = "<group>"; };
@@ -112,7 +112,7 @@
 				C8D4AD2C137EF41100CD506D /* AudioStreamInput.h */,
 				C8D4AD2D137EF41100CD506D /* Base64.cxx */,
 				C8D4AD2E137EF41100CD506D /* Base64.h */,
-				C8D4AD2F137EF41100CD506D /* Codegen.cxx */,
+				C8D4AD2F137EF41100CD506D /* Codegen.mm */,
 				C8D4AD30137EF41100CD506D /* Codegen.h */,
 				C8D4AD31137EF41100CD506D /* Common.h */,
 				C8D4AD40137EF41100CD506D /* File.h */,
@@ -185,6 +185,7 @@
 		C8D4AD13137EE85F00CD506D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastUpgradeCheck = 0500;
 			};
 			buildConfigurationList = C8D4AD16137EE85F00CD506D /* Build configuration list for PBXProject "echoprint-codegen-ios" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -211,7 +212,7 @@
 				C8D4AD4F137EF41100CD506D /* AudioBufferInput.cxx in Sources */,
 				C8D4AD51137EF41100CD506D /* AudioStreamInput.cxx in Sources */,
 				C8D4AD53137EF41100CD506D /* Base64.cxx in Sources */,
-				C8D4AD55137EF41100CD506D /* Codegen.cxx in Sources */,
+				C8D4AD55137EF41100CD506D /* Codegen.mm in Sources */,
 				C8D4AD62137EF41100CD506D /* Fingerprint.cxx in Sources */,
 				C8D4AD64137EF41100CD506D /* MatrixUtility.cxx in Sources */,
 				9AE5AA1A139FB2620009FCD8 /* SubbandAnalysis.cxx in Sources */,
@@ -226,7 +227,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8D4AD6F137EF5AC00CD506D /* echoprint-codegen-ios.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
@@ -235,6 +235,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -243,7 +244,6 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C8D4AD6F137EF5AC00CD506D /* echoprint-codegen-ios.xcconfig */;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
