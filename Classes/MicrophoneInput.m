@@ -100,6 +100,7 @@
 	NSURL *url = 
                  [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:riff ofType:@"mp3"]];
 	NSError *error;
+    [audioPlayer dealloc];
 	audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
 	audioPlayer.numberOfLoops = 0;
     audioPlayer.currentTime = offset;

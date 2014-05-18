@@ -25,6 +25,7 @@
 
 @interface echoprintViewController : UIViewController <MPMediaPickerControllerDelegate> {
 	BOOL recording;
+    NSTimeInterval startRecordingTimestamp;
 	IBOutlet UIButton* recordButton;
 	IBOutlet UILabel* statusLine;
 	MicrophoneInput* recorder;
