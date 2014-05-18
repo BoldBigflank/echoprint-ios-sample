@@ -29,6 +29,7 @@
 -(IBAction) stopRecording;
 -(IBAction) playRecording;
 -(IBAction) stopPlaying;
+- (void) playRiff: (NSString*)riff offset:(double)offset;
 
 @end
 

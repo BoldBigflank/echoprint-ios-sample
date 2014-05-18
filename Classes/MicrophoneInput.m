@@ -69,7 +69,7 @@
 	AVAudioSession *audioSession = [AVAudioSession sharedInstance];
 	[audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
 	
-	NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/recordTest.caf", [[NSBundle mainBundle] resourcePath]]];
+	NSURL *url = [NSURL fileURLWithPath:[NSString stringWithFormat:@"%@/output.caf", [[NSBundle mainBundle] resourcePath]]];
 	NSError *error;
 	audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
 	audioPlayer.numberOfLoops = 0;
@@ -89,6 +89,24 @@
 	[audioPlayer release];
 	[audioRecorder release];
 	[super dealloc];
+}
+
+- (void) playRiff:(NSString*)riff offset:(double)offset{
+    NSLog(@"playRiff");
+	// Init audio with playback capability
+	AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+	[audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
+	
+	NSURL *url = 
+                 [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:riff ofType:@"mp3"]];
+	NSError *error;
+	audioPlayer = [[AVAudioPlayer alloc] initWithContentsOfURL:url error:&error];
+	audioPlayer.numberOfLoops = 0;
+    audioPlayer.currentTime = offset;
+//    [audioPlayer setCurrentTime:o];
+	[audioPlayer play];
+	NSLog(@"playing");
+
 }
 
 

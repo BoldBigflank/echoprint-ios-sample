@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <AVFoundation/AVFoundation.h>
 #import <MediaPlayer/MediaPlayer.h>
 #import <AVFoundation/AVFoundation.h>
 #import <AudioToolbox/AudioToolbox.h>  
@@ -17,15 +18,17 @@
 
 
 // developer.echonest.com
-#define API_KEY @"GET_YOUR_OWN"
-#define API_HOST @"developer.echonest.com"
+#define API_KEY @"L2NIBHIT9UWJT8TTQ"
+//#define API_HOST @"developer.echonest.com"
+//#define API_HOST @"10.11.97.189:37760"
+#define API_HOST @"192.168.1.129:37760"
 
 @interface echoprintViewController : UIViewController <MPMediaPickerControllerDelegate> {
 	BOOL recording;
 	IBOutlet UIButton* recordButton;
 	IBOutlet UILabel* statusLine;
 	MicrophoneInput* recorder;
-
+    
 }
 
 - (IBAction)pickSong:(id)sender;
