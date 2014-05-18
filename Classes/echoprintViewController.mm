@@ -26,15 +26,15 @@
 		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 		NSString *documentsDirectory = paths[0];
 		NSString *filePath =[documentsDirectory stringByAppendingPathComponent:@"output.caf"];
-		[statusLine setText:@"analysing..."];
+		[statusLine setText:@"Communicating With Server"];
 		[statusLine setNeedsDisplay];
 		[self.view setNeedsDisplay];
         NSString* fpCode = [FPGenerator generateFingerprintForFile:filePath];
         [self getSong:fpCode];
 	} else {
-		[statusLine setText:@"recording..."];
+		[statusLine setText:@"Listening..."];
 		recording = YES;
-		[recordButton setTitle:@"Stop" forState:UIControlStateNormal];
+		[recordButton setTitle:@"Done Listening" forState:UIControlStateNormal];
 		[recorder startRecording];
         startRecordingTimestamp = [[NSDate date] timeIntervalSince1970];
 		[statusLine setNeedsDisplay];
@@ -97,20 +97,20 @@
 		if([[dictionary objectForKey:@"success"] boolValue]) {
             NSDictionary *match = dictionary[@"match"];
 			NSString * song_title = match[@"track"];
-//			NSString * artist_name = match[@"artist"];
+			NSString * artist_name = match[@"artist"];
             double timeDiff = [match[@"timeDiff"] doubleValue];
             double riff_offset = [match[@"riff_offset"] doubleValue];
             
             NSTimeInterval recordingTime = [[NSDate date] timeIntervalSince1970] - startRecordingTimestamp;
-			[statusLine setText:[NSString stringWithFormat:@"%@ - %@", song_title, [NSString stringWithFormat:@"%f", timeDiff ]]];
-            
+//			[statusLine setText:[NSString stringWithFormat:@"%@ - %@", song_title, [NSString stringWithFormat:@"%f", timeDiff ]]];
+            [ statusLine setText:[ NSString stringWithFormat:@"Now Riffing: %@", artist_name ] ];
             [recorder playRiff:song_title offset:timeDiff+riff_offset+recordingTime];
             
 		} else {
-			[statusLine setText:@"no match"];
+			[statusLine setText:@"Couldn't Find a Match"];
 		}
 	} else {
-		[statusLine setText:@"some error"];
+		[statusLine setText:@"Error Communicating With Server"];
 		NSLog(@"error: %@", error);
 	}
 	[statusLine setNeedsDisplay];
