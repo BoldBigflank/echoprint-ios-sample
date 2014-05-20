@@ -20,8 +20,8 @@
 // developer.echonest.com
 #define API_KEY @"L2NIBHIT9UWJT8TTQ"
 //#define API_HOST @"developer.echonest.com"
-//#define API_HOST @"10.11.97.189:37760"
-#define API_HOST @"192.168.1.129:37760"
+#define API_HOST @"boiling-reef-2937.herokuapp.com"
+//#define API_HOST @"192.168.1.129:37760"
 
 @interface echoprintViewController : UIViewController <MPMediaPickerControllerDelegate> {
 	BOOL recording;
