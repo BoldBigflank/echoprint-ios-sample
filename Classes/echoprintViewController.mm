@@ -31,6 +31,7 @@
 		[self.view setNeedsDisplay];
         NSString* fpCode = [FPGenerator generateFingerprintForFile:filePath];
         [self getSong:fpCode];
+        [self stopAudioMetering];
 	} else {
 		[statusLine setText:@"Listening..."];
 		recording = YES;
@@ -39,8 +40,36 @@
         startRecordingTimestamp = [[NSDate date] timeIntervalSince1970];
 		[statusLine setNeedsDisplay];
 		[self.view setNeedsDisplay];
+        [meter setText:[NSString stringWithFormat:@"Current DB: %f", recorder.averagePower]];
+        
+        [self startAudioMetering];
+        
 	}
 
+}
+
+- (void)startAudioMetering
+{
+    self.meterTimer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                                                       target:self
+                                                     selector:@selector(updateAudioMeter)
+                                                     userInfo:nil
+                                                      repeats:YES];
+}
+
+- (void)updateAudioMeter //called by timer
+{
+    // audioRecorder being your instance of AVAudioRecorder
+    [recorder updateMeter];
+    [meter setText:[NSString stringWithFormat:@"Current DB: %f", recorder.peakPower]];
+
+    [meter setNeedsDisplay];
+    [self.view setNeedsDisplay];
+}
+
+- (void)stopAudioMetering
+{
+    [self.meterTimer invalidate];
 }
 
 
@@ -116,6 +145,7 @@
 	[statusLine setNeedsDisplay];
 	[self.view setNeedsDisplay];
 }
+
 
 
 

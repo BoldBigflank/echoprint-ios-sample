@@ -14,7 +14,8 @@
 	AVAudioPlayer *audioPlayer;
 	AVAudioRecorder *audioRecorder;
 	int recordEncoding;
-	enum
+
+    enum
 	{
 		ENC_AAC = 1,
 		ENC_ALAC = 2,
@@ -30,6 +31,10 @@
 -(IBAction) playRecording;
 -(IBAction) stopPlaying;
 - (void) playRiff: (NSString*)riff offset:(double)offset;
+- (void) updateMeter;
+
+@property float averagePower;
+@property float peakPower;
 
 @end
 

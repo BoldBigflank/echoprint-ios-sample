@@ -29,12 +29,15 @@
 	IBOutlet UIButton* recordButton;
 	IBOutlet UILabel* statusLine;
 	MicrophoneInput* recorder;
-    
+    IBOutlet UILabel* meter;
+
 }
 
 - (IBAction)pickSong:(id)sender;
 - (IBAction)startMicrophone:(id)sender;
 - (void) getSong: (NSString*) fpCode;
+
+@property(assign) NSTimer* meterTimer;
 
 @end
 
