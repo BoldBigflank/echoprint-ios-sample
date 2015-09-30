@@ -73,35 +73,35 @@
 }
 
 
-- (void)mediaPicker:(MPMediaPickerController *)mediaPicker 
-  didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection {
-	[self dismissViewControllerAnimated:YES completion:nil];
-	for (MPMediaItem* item in mediaItemCollection.items) {
-		NSString* title = [item valueForProperty:MPMediaItemPropertyTitle];
-		NSURL* assetURL = [item valueForProperty:MPMediaItemPropertyAssetURL];
-		NSLog(@"title: %@, url: %@", title, assetURL);
-		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-		NSString *documentsDirectory = paths[0];
-
-		NSURL* destinationURL = [NSURL fileURLWithPath:[documentsDirectory stringByAppendingPathComponent:@"temp_data"]];
-		[[NSFileManager defaultManager] removeItemAtURL:destinationURL error:nil];
-		TSLibraryImport* import = [[TSLibraryImport alloc] init];
-		[import importAsset:assetURL toURL:destinationURL completionBlock:^(TSLibraryImport* import) {
-			//check the status and error properties of
-			//TSLibraryImport
-			NSString *outPath = [documentsDirectory stringByAppendingPathComponent:@"temp_data"];
-			NSLog(@"done now. %@", outPath);
-			[statusLine setText:@"analysing..."];
-			
-            NSString* fpCode = [FPGenerator generateFingerprintForFile:outPath];
-            
-			[statusLine setNeedsDisplay];
-			[self.view setNeedsDisplay];
-			[self getSong:fpCode];
-		}];
-		
-	}
-}
+//- (void)mediaPicker:(MPMediaPickerController *)mediaPicker 
+//  didPickMediaItems:(MPMediaItemCollection *)mediaItemCollection {
+//	[self dismissViewControllerAnimated:YES completion:nil];
+//	for (MPMediaItem* item in mediaItemCollection.items) {
+//		NSString* title = [item valueForProperty:MPMediaItemPropertyTitle];
+//		NSURL* assetURL = [item valueForProperty:MPMediaItemPropertyAssetURL];
+//		NSLog(@"title: %@, url: %@", title, assetURL);
+//		NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+//		NSString *documentsDirectory = paths[0];
+//
+//		NSURL* destinationURL = [NSURL fileURLWithPath:[documentsDirectory stringByAppendingPathComponent:@"temp_data"]];
+//		[[NSFileManager defaultManager] removeItemAtURL:destinationURL error:nil];
+//		TSLibraryImport* import = [[TSLibraryImport alloc] init];
+//		[import importAsset:assetURL toURL:destinationURL completionBlock:^(TSLibraryImport* import) {
+//			//check the status and error properties of
+//			//TSLibraryImport
+//			NSString *outPath = [documentsDirectory stringByAppendingPathComponent:@"temp_data"];
+//			NSLog(@"done now. %@", outPath);
+//			[statusLine setText:@"analysing..."];
+//			
+//            NSString* fpCode = [FPGenerator generateFingerprintForFile:outPath];
+//            
+//			[statusLine setNeedsDisplay];
+//			[self.view setNeedsDisplay];
+//			[self getSong:fpCode];
+//		}];
+//		
+//	}
+//}
 
 
 - (void) getSong: (NSString*) fpCode {
